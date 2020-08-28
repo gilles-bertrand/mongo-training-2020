@@ -22,6 +22,7 @@ exports.create = async (req, res) => {
         body = '';
         req.on('data', data => { body += data; })
         req.on('end', async () => {
+            console.log('truc')
             student.create(JSON.parse(body))
             res.statusCode = 201;
             res.end(JSON.stringify({ status: 'done' }))
