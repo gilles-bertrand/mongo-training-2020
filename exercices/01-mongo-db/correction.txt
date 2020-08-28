@@ -1,0 +1,20 @@
+2.
+db.new_movies.copyTo('movies')
+3.
+db.movies.find( {}, { 'title': 1 } ).sort({ 'year': -1 });
+db.movies.find( {}, { 'title': 1 } ).sort({ 'title': 1 });
+db.movies.find( {}, { 'title': 1 } ).sort({ 'rank': -1 });
+4.
+db.movies.find({'actors' : {$in :['Sharlto Copley']}},{'title':1,_id:0})
+db.movies.find({'genres' : {$in :['Comedy']}},{'title':1,_id:0})
+db.movies.find({$and : [{'year':{$gte:2002}},{'year':{$lte : 2008}}]},{'title':1,_id:0})
+db.movies.find({$and:[{'actors':{$in:['Matt Damon']}},{'actors':{$in:['Brad Pitt']}}]},{'title':1,'_id':0})
+db.movies.find({'directors' :{$in:['Neil Burger','Brad Furman']}},{'title':1,'directors':1,'_id':0})
+db.movies.find({'year':{$exists:true}},{'title':1,'year':1,'_id':0}).limit(1).sort({'year':1})
+5.
+db.movies.find( { 'actors' : { $in : ['Charlize Theron'] } },{'title':1,'rank':1,'_id':0} ).sort({'rank':-1})
+db.movies.update( { 'actors' : { $in : ['Charlize Theron'] } },{$inc : {'rank':-1000}},{multi:true})
+db.movies.find({'directors': {$in:['Harald Zwart']}},{'title':1,'_id':0})
+db.movies.remove({'directors': {$in:['Harald Zwart']}},{multi:true})
+db.movies.find({'title': {$in:['+1','3D rou pu tuan zhi ji le bao jian','Anamorph']}},{'title':1,'actors':1,'_id':0}).pretty()
+db.movies.update({'title': {$in:['+1','3D rou pu tuan zhi ji le bao jian','Anamorph']}},{$push :{'actors':'Key key'}},{multi:true})

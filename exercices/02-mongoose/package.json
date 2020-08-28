@@ -1,0 +1,11 @@
+{
+  "name": "02-mongoose",
+  "version": "0.0.1",
+  "description": "exercice technocite",
+  "main": "app.js",
+  "author": "TCDP",
+  "license": "MIT",
+  "dependencies": {
+    "mongoose": "^5.10.1"
+  }
+}

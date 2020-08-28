@@ -1,0 +1,13 @@
+{
+  "name": "03-mongoose-api",
+  "version": "0.0.1",
+  "description": "our first JSON API",
+  "main": "app.js",
+  "author": "TCDP",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "mongoose": "^5.10.1",
+    "querystring": "^0.2.0"
+  }
+}

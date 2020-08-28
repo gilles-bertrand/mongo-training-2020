@@ -1,0 +1,4 @@
+1. Créer une app node en MVC qui sur la home page affichera les requêtes suivantes sans ajax.
+2. Lister les 5 premiers films par année de sortie de la plus récente à la plus ancienne.
+3. Lister les 5 premiers films par ordre alphabétique du titre.
+4. Lister les 5 premiers films dont le rating est le plus élevé.
