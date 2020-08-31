@@ -5,6 +5,8 @@ const routes = [
     {url:`${api_root}${api_version}/students`,controller:'student',method:'GET',action:'list'},
     {url:`${api_root}${api_version}/students/:id`,controller:'student',method:'GET',action:'read'},
     {url:`${api_root}${api_version}/students/:id`,controller:'student',method:'DELETE',action:'delete'},
+    {url:`${api_root}${api_version}/students/:id`,controller:'student',method:'PATCH',action:'update'},
+    {url:`${api_root}${api_version}/students/:id`,controller:'student',method:'PUT',action:'update'},
     {url:`${api_root}${api_version}/students`,controller:'student',method:'POST',action:'create'},
 
 ];
