@@ -4,19 +4,38 @@ exports.list = async (req, res) => {
     try {
         let data = await model.find({});
         res.statusCode = 200;
-        res.setHeader('Content-Type: application/json');
+        //  res.setHeader('Content-Type: application/json');
         res.end(JSON.stringify(data))
     } catch (e) {
         const data = {
             error: 1,
             message: 'There was an error in the request to the database!'
         }
-        res.setHeader('Content-Type: application/json');
+        // res.setHeader('Content-Type: application/json');
         res.statusCode = 500;
         res.end(JSON.stringify(data));
     }
 };
 
+
+exports.read = async (req, res) => {
+    try {
+        console.log('ok for byId')
+        res.end('ok');
+        // let data = await model.findById();
+        // res.statusCode = 200;
+        // //  res.setHeader('Content-Type: application/json');
+        // res.end(JSON.stringify(data))
+    } catch (e) {
+        const data = {
+            error: 1,
+            message: 'There was an error in the request to the database!'
+        }
+        // res.setHeader('Content-Type: application/json');
+        res.statusCode = 500;
+        res.end(JSON.stringify(data));
+    }
+};
 exports.create = async (req, res) => {
       try {
         body = '';
@@ -32,7 +51,7 @@ exports.create = async (req, res) => {
             error: 1,
             message: 'There was an error in the request to the database!'
         }
-        res.setHeader('Content-Type: application/json');
+        // res.setHeader('Content-Type: application/json');
         res.statusCode = 500;
         res.end(JSON.stringify(data));
     }
