@@ -10,7 +10,6 @@ const routes = [
 
 module.exports =async (req,res) =>{
     let newRoutes = await helper.parser(req,res,routes);
-
     let index = newRoutes.findIndex(route=>route.url ===req.url && route.method === req.method);
     if(index !== -1){
         require(`${process.cwd()}/controllers/${routes[index].controller}`)[routes[index].action](req,res);

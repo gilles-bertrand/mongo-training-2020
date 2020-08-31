@@ -20,12 +20,12 @@ exports.list = async (req, res) => {
 
 exports.read = async (req, res) => {
     try {
-        console.log('ok for byId')
-        res.end('ok');
-        // let data = await model.findById();
-        // res.statusCode = 200;
-        // //  res.setHeader('Content-Type: application/json');
-        // res.end(JSON.stringify(data))
+        let values = req.url.split('/');
+        let id = values[values.length-1];
+        let data = await model.findById(id);
+        res.statusCode = 200;
+        //  res.setHeader('Content-Type: application/json');
+        res.end(JSON.stringify(data))
     } catch (e) {
         const data = {
             error: 1,
